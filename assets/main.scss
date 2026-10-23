@@ -1,0 +1,103 @@
+---
+---
+@import "minima";
+
+$ink: #20231f;
+$yellow: #f4d52c;
+
+html { scroll-behavior: smooth; }
+body {
+  color: $ink;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+.wrapper { max-width: 1120px; }
+a, a:visited { color: $ink; }
+a:hover { color: $ink; }
+a:focus-visible { outline: 3px solid #735c00; outline-offset: 5px; }
+h1, h2, h3 { font-weight: 700; line-height: 1.15; letter-spacing: -.035em; }
+h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+p { max-width: 65ch; }
+section { scroll-margin-top: 2rem; }
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 10;
+  padding: .75rem 1rem;
+  background: $yellow;
+}
+.skip-link:focus { top: 1rem; }
+.institution-bar { padding: .55rem 0; background: $ink; color: #fff; font-size: .8rem; }
+.institution-bar span { margin: 0 .6rem; color: $yellow; }
+.site-header { border: 0; padding: 1.5rem 0; }
+.header-inner, .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.header-inner::after, .footer-inner::after { display: none; }
+.brand { display: block; max-width: 270px; }
+.brand img, .department-logo { display: block; width: 100%; height: auto; }
+.main-nav { display: flex; flex-wrap: wrap; gap: 1.75rem; font-size: .95rem; font-weight: 600; }
+.main-nav a { text-decoration: none; border-bottom: 2px solid $yellow; }
+.page-content { padding: 1rem 0 0; }
+.hero { display: grid; grid-template-columns: 1.5fr 1fr; background: #f6f5ee; }
+.hero-copy { padding: 3rem; }
+.eyebrow { font-size: .75rem; text-transform: uppercase; font-weight: 700; letter-spacing: .1em; }
+.hero h1 { font-size: clamp(2.4rem, 5vw, 4.1rem); margin: 1.5rem 0; }
+.hero h1 span { background: $yellow; padding: 0 .12em; box-decoration-break: clone; }
+.hero-description { font-size: 1.15rem; font-weight: 600; }
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
+.button { display: inline-block; background: $yellow; padding: .85rem 1.1rem; font-weight: 700; border: 1px solid $ink; }
+.button:hover { background: #ffe970; text-decoration: none; }
+.text-link { text-underline-offset: .3em; text-decoration: underline; font-weight: 600; }
+.hero-art {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 360px;
+  padding: 2rem;
+  color: $yellow;
+  background-color: $ink;
+  background-image: linear-gradient(#ffffff12 1px, transparent 1px), linear-gradient(90deg, #ffffff12 1px, transparent 1px);
+  background-size: 40px 40px;
+  overflow: hidden;
+}
+.art-label { font-size: .8rem; line-height: 1.3; letter-spacing: .2em; }
+.art-symbol { align-self: center; font-size: clamp(5rem, 10vw, 9rem); font-weight: 800; letter-spacing: -.09em; line-height: 1.5; }
+.art-symbol span { font-size: .5em; vertical-align: top; }
+.art-caption { font-size: .7rem; }
+.content-section { padding: 4rem 0; border-bottom: 1px solid #deded5; }
+.intro-section, .projects-section { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.section-copy { padding-top: 2rem; font-size: 1.1rem; }
+.section-copy p:last-child { color: #50554c; }
+.projects-section { align-items: center; }
+.project-link { display: flex; flex-direction: column; gap: 1rem; padding: 2rem; background: $yellow; border: 1px solid $ink; }
+.project-link:hover { text-decoration: none; background: #ffe970; }
+.project-link-title { font-size: 1.65rem; font-weight: 700; line-height: 1.2; }
+.resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.resource-card { padding: 1.5rem; background: #f6f5ee; border-top: 4px solid $yellow; }
+.resource-card h3 { font-size: 1.2rem; }
+.resource-card p { margin-bottom: 0; }
+.resource-card:hover { background: #eeeee4; text-decoration: none; }
+.site-footer { background: #f6f5ee; border: 0; padding: 2.5rem 0; }
+.footer-title { font-weight: 700; }
+.department-logo { max-width: 280px; }
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { padding: 2rem; }
+  .hero-art { min-height: 200px; }
+  .art-symbol { font-size: 6rem; line-height: 1; }
+  .intro-section, .projects-section { grid-template-columns: 1fr; gap: 1rem; }
+  .section-copy { padding-top: 0; }
+  .content-section { padding: 2.5rem 0; }
+}
+@media (max-width: 600px) {
+  .header-inner, .footer-inner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .brand { max-width: 230px; }
+  .main-nav { gap: 1.5rem; }
+  .hero-copy { padding: 1.5rem; }
+  .resource-grid { grid-template-columns: 1fr; }
+  .institution-bar { font-size: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

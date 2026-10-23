@@ -1,0 +1,14 @@
+title: Centro Digital Humanities
+description: Centro Interdipartimentale di Ricerca in Digital Humanities dell’Università del Salento.
+lang: it
+url: https://centrodh-unisalento.github.io
+baseurl: /home
+theme: minima
+projects_url: https://github.com/centrodh-unisalento/home/projects
+plugins:
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
