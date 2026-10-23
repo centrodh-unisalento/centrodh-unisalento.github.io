@@ -69,7 +69,13 @@ section { scroll-margin-top: 2rem; }
 .intro-section, .projects-section { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .section-copy { padding-top: 2rem; font-size: 1.1rem; }
 .section-copy p:last-child { color: #50554c; }
+.methods-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.method-card { padding: 1.5rem; background: #f6f5ee; border-top: 4px solid $yellow; }
+.method-number { display: block; margin-bottom: 1rem; font-size: .85rem; font-weight: 700; }
+.method-card h3 { font-size: 1.3rem; }
+.method-card p { margin-bottom: 0; }
 .projects-section { align-items: center; }
+.access-note { font-size: .9rem; color: #50554c; }
 .project-link { display: flex; flex-direction: column; gap: 1rem; padding: 2rem; background: $yellow; border: 1px solid $ink; }
 .project-link:hover { text-decoration: none; background: #ffe970; }
 .project-link-title { font-size: 1.65rem; font-weight: 700; line-height: 1.2; }
@@ -87,6 +93,7 @@ section { scroll-margin-top: 2rem; }
   .hero-art { min-height: 200px; }
   .art-symbol { font-size: 6rem; line-height: 1; }
   .intro-section, .projects-section { grid-template-columns: 1fr; gap: 1rem; }
+  .methods-grid { grid-template-columns: 1fr; }
   .section-copy { padding-top: 0; }
   .content-section { padding: 2.5rem 0; }
 }
