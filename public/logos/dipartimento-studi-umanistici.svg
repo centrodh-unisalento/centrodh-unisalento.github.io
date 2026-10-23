@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-labelledby="title desc">
+  <title id="title">Dipartimento di Studi Umanistici</title>
+  <desc id="desc">Logo del Dipartimento di Studi Umanistici dell’Università del Salento, con una penna dorata e un tratto curvo.</desc>
+  <rect width="640" height="220" fill="#fff"/>
+  <g transform="translate(38 22) rotate(-18 48 55)" fill="#c9a45b" stroke="#8c713e" stroke-width="1.5" aria-hidden="true">
+    <path d="M45 2C61 15 78 32 85 48L61 116 43 67 25 51C30 32 37 15 45 2Z"/>
+    <path d="M43 67 61 116 66 56Z" fill="#f1e2bd"/>
+    <path d="M45 2 43 67 61 116 58 55Z" fill="#b18a44"/>
+  </g>
+  <g fill="#4d4a46" font-family="Georgia, 'Times New Roman', serif">
+    <text x="145" y="77" font-size="43">Dipartimento di</text>
+    <text x="105" y="128" font-size="39" font-weight="700" letter-spacing="1">STUDI UMANISTICI</text>
+  </g>
+  <path d="M25 171C135 137 343 139 590 178L619 195C395 158 169 155 40 191Z" fill="#111"/>
+  <path d="M28 174C167 145 377 148 595 182" fill="none" stroke="#bbb" stroke-width="6"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
+  <title id="title">Digital Humanities</title>
+  <desc id="desc">Centro Interdipartimentale di Ricerca, Digital Humanities, Università del Salento.</desc>
+  <rect width="1280" height="480" fill="#fff"/>
+  <g fill="#050505" font-family="Arial, Helvetica, sans-serif" font-weight="700" letter-spacing="-7">
+    <text x="20" y="178" font-size="188">DIGITAL</text>
+    <text x="20" y="367" font-size="188">HUMANITIES</text>
+  </g>
+  <g fill="#050505" font-family="Arial, Helvetica, sans-serif" font-weight="300" letter-spacing="2">
+    <text x="25" y="460" font-size="49" textLength="1195" lengthAdjust="spacingAndGlyphs">CENTRO INTERDIPARTIMENTALE DI RICERCA</text>
+  </g>
+  <g fill="#fff" aria-hidden="true">
+    <path d="M0 84h22v8H0zm0 30h34v8H0zm0 31h22v8H0zm25-24h26v8H25zm-13 22h34v8H12zM81 260h17v8H81zm-32 18h47v8H49zm18 17h31v8H67zm-42 20h51v8H25zm29 17h41v8H54zm-21 18h54v8H33z"/>
+  </g>
+  <g transform="translate(1225 246)" fill="none" stroke="#111" stroke-width="2" aria-hidden="true">
+    <circle r="27"/><circle r="22"/><circle r="17"/>
+    <path d="M-12-10h24M-14-5h28M-14 0h28M-12 5h24M-9 10h18M0-17v34M-17 0h34"/>
+  </g>
+</svg>
