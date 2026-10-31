@@ -16,14 +16,13 @@ permalink: /persone/
     <h2 id="direzione-title">La direzione del Centro</h2>
   </div>
   <div class="leadership-grid">
+    {% assign direction = site.data.direttivo | where: "group", "direzione" %}
+    {% for person in direction %}
     <article class="person-card leadership-card">
-      <p class="eyebrow">Direttore</p>
-      <h3><a href="https://www.unisalento.it/scheda-utente/-/people/paolo.baldi">Paolo Baldi <span aria-hidden="true">↗</span></a></h3>
+      <p class="eyebrow">{{ person.role | escape }}</p>
+      <h3><a href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a></h3>
     </article>
-    <article class="person-card leadership-card">
-      <p class="eyebrow">Vice Direttore</p>
-      <h3><a href="https://www.unisalento.it/scheda-utente/-/people/lucio.depaolis">Lucio de Paolis <span aria-hidden="true">↗</span></a></h3>
-    </article>
+    {% endfor %}
   </div>
 </section>
 
@@ -33,11 +32,9 @@ permalink: /persone/
     <h2 id="consiglio-title">Componenti del direttivo</h2>
   </div>
   <ul class="council-list">
-    <li><a href="https://www.unisalento.it/scheda-utente/-/people/antonella.longo">Antonella Longo <span aria-hidden="true">↗</span></a></li>
-    <li><a href="https://www.unisalento.it/scheda-utente/-/people/carola.gatto">Carola Gatto <span aria-hidden="true">↗</span></a></li>
-    <li><a href="https://www.unisalento.it/scheda-utente/-/people/fabio.ciraci">Fabio Ciracì <span aria-hidden="true">↗</span></a></li>
-    <li>Fiorella Battaglia</li>
-    <li><a href="https://www.unisalento.it/scheda-utente/-/people/luca.bandirali">Luca Bandirali <span aria-hidden="true">↗</span></a></li>
-    <li><a href="https://www.unisalento.it/scheda-utente/-/people/marco.mancarella">Marco Mancarella <span aria-hidden="true">↗</span></a></li>
+    {% assign council = site.data.direttivo | where: "group", "consiglio" %}
+    {% for person in council %}
+    <li>{% if person.profile %}<a href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a>{% else %}{{ person.name | escape }}{% endif %}</li>
+    {% endfor %}
   </ul>
 </section>

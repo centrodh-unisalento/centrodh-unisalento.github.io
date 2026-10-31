@@ -35,9 +35,38 @@ rimandano alle pagine interne, senza collegamenti a GitHub Projects.
 `eventi.html` contiene uno stato vuoto esplicito: non sono stati forniti eventi
 da pubblicare. Per aggiungerli, sostituire il blocco `.empty-state` con i dettagli
 degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazione.
-`ricerca.html` presenta le prospettive di ricerca già descritte dal Centro, senza
-aggiungere progetti o attività non documentati. La homepage non contiene la
+`ricerca.html` presenta le prospettive di ricerca già descritte dal Centro e le
+pubblicazioni del direttivo su IRIS. La homepage non contiene la
 grafica decorativa iniziale né la barra degli ambiti.
+
+## Pubblicazioni IRIS
+
+Il componente riutilizzabile `_includes/pubblicazioni-iris.html`, inserito in
+`ricerca.html`, mostra otto schede espandibili: direttore, vicedirettore e sei
+componenti del Consiglio Direttivo. `_data/direttivo.yml` contiene nomi, ruoli,
+collegamenti istituzionali e identificativi autore IRIS forniti dal Centro;
+anche `persone.html` usa questo elenco per mantenere le due pagine coerenti.
+
+Ogni scheda incorpora la ricerca autore IRIS in un iframe con
+`sort_by=2&order=DESC`, 20 risultati per pagina e la paginazione del catalogo.
+I dati vengono caricati direttamente da IRIS a ogni apertura della pagina:
+non sono copiati nel repository e non servono JavaScript, plugin Jekyll
+personalizzati o workflow programmati. Una pagina lasciata aperta non viene
+ricaricata periodicamente; per aggiornare i risultati ricaricare la pagina.
+Le finestre usano il caricamento differito e non inviano il referrer.
+
+La visualizzazione incorporata dipende dalle politiche HTTP di IRIS
+(`X-Frame-Options` e CSP `frame-ancestors`): se l'archivio la vieta, il browser
+blocca la finestra. Il collegamento “Apri su IRIS” resta sempre disponibile,
+ma non sostituisce la visualizzazione delle pubblicazioni nella pagina.
+L'accesso a IRIS non è stato possibile dall'ambiente di sviluppo: verificare
+le finestre dal sito pubblicato prima di considerare l'integrazione operativa.
+Se IRIS blocca gli iframe, occorre un'integrazione autorizzata per recuperare
+e pubblicare i dati, anziché tentare di aggirare le sue politiche.
+
+Per aggiornare la composizione del direttivo, modificare `_data/direttivo.yml`;
+ogni nuova persona deve avere il proprio identificativo `iris_authority`,
+ricavato dal parametro `authority` della ricerca IRIS, non dal nome.
 
 ## Sviluppo locale
 
