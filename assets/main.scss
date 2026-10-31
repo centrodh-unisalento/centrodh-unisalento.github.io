@@ -112,13 +112,11 @@ section { scroll-margin-top: 2rem; }
 .publications-note { color: $muted; font-size: .85rem; }
 .publications-list { display: grid; gap: 1.25rem; }
 .publication-card { min-width: 0; border: 1px solid $line; border-top: 3px solid $yellow; border-radius: 4px; background: #fff; }
-.publication-card summary { padding: 1.25rem; cursor: pointer; }
-.publication-card summary:focus-visible { outline: 3px solid #806500; outline-offset: 3px; }
-.publication-author { font-size: 1.2rem; font-weight: 600; }
-.publication-role { display: block; margin-left: 1.3rem; color: $muted; font-size: .8rem; }
+.publication-heading { padding: 1.25rem; }
+.publication-author { margin-bottom: .5rem; font-family: inherit; font-size: 1.2rem; font-weight: 600; letter-spacing: normal; line-height: 1.3; }
+.publication-role { margin-bottom: 0; color: $muted; font-size: .8rem; }
 .publication-content { padding: 0 1.25rem 1.25rem; }
 .publication-content > a { display: inline-block; margin-bottom: 1rem; }
-.publication-frame { display: block; width: 100%; height: 650px; border: 1px solid $line; background: #fff; }
 
 @media (max-width: 1000px) {
   .wrapper { width: calc(100% - 64px); }

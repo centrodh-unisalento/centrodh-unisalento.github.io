@@ -35,34 +35,29 @@ rimandano alle pagine interne, senza collegamenti a GitHub Projects.
 `eventi.html` contiene uno stato vuoto esplicito: non sono stati forniti eventi
 da pubblicare. Per aggiungerli, sostituire il blocco `.empty-state` con i dettagli
 degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazione.
-`ricerca.html` presenta le prospettive di ricerca già descritte dal Centro e le
-pubblicazioni del direttivo su IRIS. La homepage non contiene la
+`ricerca.html` contiene soltanto la sezione Pubblicazioni, con le schede degli
+autori e i collegamenti al catalogo IRIS. La homepage non contiene la
 grafica decorativa iniziale né la barra degli ambiti.
 
 ## Pubblicazioni IRIS
 
 Il componente riutilizzabile `_includes/pubblicazioni-iris.html`, inserito in
-`ricerca.html`, mostra otto schede espandibili: direttore, vicedirettore e sei
+`ricerca.html`, mostra otto schede sempre visibili: direttore, vicedirettore e sei
 componenti del Consiglio Direttivo. `_data/direttivo.yml` contiene nomi, ruoli,
 collegamenti istituzionali e identificativi autore IRIS forniti dal Centro;
 anche `persone.html` usa questo elenco per mantenere le due pagine coerenti.
 
-Ogni scheda incorpora la ricerca autore IRIS in un iframe con
+Ogni scheda collega alla ricerca autore IRIS con
 `sort_by=2&order=DESC`, 20 risultati per pagina e la paginazione del catalogo.
-I dati vengono caricati direttamente da IRIS a ogni apertura della pagina:
-non sono copiati nel repository e non servono JavaScript, plugin Jekyll
-personalizzati o workflow programmati. Una pagina lasciata aperta non viene
-ricaricata periodicamente; per aggiornare i risultati ricaricare la pagina.
-Le finestre usano il caricamento differito e non inviano il referrer.
+Gli elenchi si aprono in una nuova scheda su IRIS: i titoli delle pubblicazioni
+non sono mostrati nella pagina del sito né copiati nel repository. Non servono
+JavaScript, plugin Jekyll personalizzati o workflow programmati.
 
-La visualizzazione incorporata dipende dalle politiche HTTP di IRIS
-(`X-Frame-Options` e CSP `frame-ancestors`): se l'archivio la vieta, il browser
-blocca la finestra. Il collegamento “Apri su IRIS” resta sempre disponibile,
-ma non sostituisce la visualizzazione delle pubblicazioni nella pagina.
-L'accesso a IRIS non è stato possibile dall'ambiente di sviluppo: verificare
-le finestre dal sito pubblicato prima di considerare l'integrazione operativa.
-Se IRIS blocca gli iframe, occorre un'integrazione autorizzata per recuperare
-e pubblicare i dati, anziché tentare di aggirare le sue politiche.
+Non vengono usati iframe: la visibilità delle schede e dei collegamenti non
+dipende dalle politiche di incorporamento di IRIS. L'accesso a IRIS non è stato
+possibile dall'ambiente di sviluppo; la disponibilità del catalogo e i risultati
+degli autori vanno verificati esternamente. Per mostrare i titoli direttamente
+nel sito occorre un'integrazione autorizzata per recuperare e pubblicare i dati.
 
 Per aggiornare la composizione del direttivo, modificare `_data/direttivo.yml`;
 ogni nuova persona deve avere il proprio identificativo `iris_authority`,
