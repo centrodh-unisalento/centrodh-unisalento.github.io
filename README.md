@@ -2,8 +2,8 @@
 
 Sito in italiano generato con **Jekyll**, con un layout personalizzato in
 `_layouts/default.html`. I loghi originali in `public/logos/` sono usati
-nell’intestazione, nella homepage e nel piè di pagina, senza modificarli.
-Tipografia, palette avorio/giallo e layout responsive per homepage e persone
+nell’intestazione e nel piè di pagina, senza modificarli.
+Tipografia, palette avorio/giallo e layout responsive per tutte le pagine
 sono definiti in `assets/main.scss`, senza font remoti o JavaScript.
 
 ## Pubblicazione su GitHub Pages
@@ -25,8 +25,19 @@ branch descritta sopra per usare questa configurazione.
 `url` e `baseurl` in `_config.yml` corrispondono al sito alla radice del dominio.
 Aggiornarli se cambia il percorso di pubblicazione o viene impostato un dominio
 personalizzato. I percorsi degli asset usano il filtro Jekyll `relative_url`.
-Il collegamento ai progetti è configurato in `projects_url` e punta alla pagina
-GitHub Projects richiesta; l'accesso ai contenuti dipende dai permessi su GitHub.
+
+## Pagine e contenuti
+
+La navigazione comprende Il Centro (sezione della homepage), Persone
+(`/persone/`), Eventi (`/eventi/`) e Ricerca (`/ricerca/`). Homepage e menu
+rimandano alle pagine interne, senza collegamenti a GitHub Projects.
+
+`eventi.html` contiene uno stato vuoto esplicito: non sono stati forniti eventi
+da pubblicare. Per aggiungerli, sostituire il blocco `.empty-state` con i dettagli
+degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazione.
+`ricerca.html` presenta le prospettive di ricerca già descritte dal Centro, senza
+aggiungere progetti o attività non documentati. La homepage non contiene la
+grafica decorativa iniziale né la barra degli ambiti.
 
 ## Sviluppo locale
 
