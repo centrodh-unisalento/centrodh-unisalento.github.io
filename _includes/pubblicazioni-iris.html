@@ -1,0 +1,32 @@
+<section class="content-section publications-section" aria-labelledby="pubblicazioni-title">
+  <div class="section-heading">
+    <p class="eyebrow">03 / Pubblicazioni</p>
+    <h2 id="pubblicazioni-title">La ricerca del direttivo</h2>
+    <p>Le pubblicazioni del direttore, del vicedirettore e dei componenti del Consiglio Direttivo, dal catalogo IRIS dell’Università del Salento.</p>
+    <p class="publications-note" id="iris-note">Apri la scheda di ciascun autore per consultare le pubblicazioni, ordinate per anno dal più recente. Le finestre caricano direttamente IRIS: le nuove pubblicazioni sono disponibili a ogni apertura della pagina, senza aggiornamenti manuali del sito. Usa la paginazione di IRIS per consultare gli altri risultati.</p>
+    <p class="publications-note">Se IRIS impedisce la visualizzazione nella finestra, usa il collegamento “Apri su IRIS” dell’autore.</p>
+  </div>
+  <div class="publications-list">
+    {% for person in site.data.direttivo %}
+    {% capture iris_url %}https://iris.unisalento.it/browse?type=author&sort_by=2&order=DESC&rpp=20&etal=-1&authority={{ person.iris_authority | uri_escape }}&starts_with=&offset=0{% endcapture %}
+    <details class="publication-card"{% if forloop.first %} open{% endif %}>
+      <summary>
+        <span class="publication-author">{{ person.name | escape }}</span>
+        <span class="publication-role">{{ person.role | escape }}</span>
+      </summary>
+      <div class="publication-content">
+        <a class="text-link" href="{{ iris_url | escape }}" target="_blank" rel="noopener noreferrer">Apri su IRIS <span class="visually-hidden">le pubblicazioni di {{ person.name | escape }} (nuova scheda)</span><span aria-hidden="true">↗</span></a>
+        <iframe
+          class="publication-frame"
+          src="{{ iris_url | escape }}"
+          title="Pubblicazioni di {{ person.name | escape }} su IRIS, dal più recente"
+          aria-describedby="iris-note"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          width="100%"
+          height="650"></iframe>
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+</section>

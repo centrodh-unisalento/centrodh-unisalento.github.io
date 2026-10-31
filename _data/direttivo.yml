@@ -1,0 +1,39 @@
+- name: Paolo Baldi
+  role: Direttore
+  group: direzione
+  profile: https://www.unisalento.it/scheda-utente/-/people/paolo.baldi
+  iris_authority: rp22433
+- name: Lucio de Paolis
+  role: Vice Direttore
+  group: direzione
+  profile: https://www.unisalento.it/scheda-utente/-/people/lucio.depaolis
+  iris_authority: rp06689
+- name: Antonella Longo
+  role: Consiglio Direttivo
+  group: consiglio
+  profile: https://www.unisalento.it/scheda-utente/-/people/antonella.longo
+  iris_authority: rp04403
+- name: Carola Gatto
+  role: Consiglio Direttivo
+  group: consiglio
+  profile: https://www.unisalento.it/scheda-utente/-/people/carola.gatto
+  iris_authority: rp12698
+- name: Fabio Ciracì
+  role: Consiglio Direttivo
+  group: consiglio
+  profile: https://www.unisalento.it/scheda-utente/-/people/fabio.ciraci
+  iris_authority: rp01327
+- name: Fiorella Battaglia
+  role: Consiglio Direttivo
+  group: consiglio
+  iris_authority: rp20209
+- name: Luca Bandirali
+  role: Consiglio Direttivo
+  group: consiglio
+  profile: https://www.unisalento.it/scheda-utente/-/people/luca.bandirali
+  iris_authority: rp07530
+- name: Marco Mancarella
+  role: Consiglio Direttivo
+  group: consiglio
+  profile: https://www.unisalento.it/scheda-utente/-/people/marco.mancarella
+  iris_authority: rp03477
