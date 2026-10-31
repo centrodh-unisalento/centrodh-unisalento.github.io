@@ -40,6 +40,19 @@ degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazio
 con un collegamento alle pubblicazioni IRIS sotto ogni nome. La homepage non contiene la
 grafica decorativa iniziale né la barra degli ambiti.
 
+## Contatti e mailing list
+
+Il piè di pagina condiviso (`_includes/footer.html`) presenta il contatto
+`centrodh@unisalento.it` e il pulsante per richiedere l'iscrizione alla mailing
+list Google Groups tramite `ml_centrodh+subscribe@unisalento.it`.
+Il pulsante apre il programma di posta: l'utente deve inviare la richiesta
+e seguire le istruzioni ricevute; non iscrive automaticamente al clic.
+
+Il gruppo deve consentire le richieste di adesione e, per gli indirizzi
+esterni all'Ateneo, i membri esterni secondo le politiche Google Workspace.
+L'approvazione dipende dalle impostazioni dei gestori. Verificare la procedura
+da un indirizzo non iscritto: il sito non configura né verifica il gruppo.
+
 ## Pubblicazioni IRIS
 
 Il componente riutilizzabile `_includes/pubblicazioni-iris.html` riceve
