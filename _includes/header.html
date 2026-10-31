@@ -13,8 +13,8 @@
     <nav class="main-nav" aria-label="Navigazione principale">
       <a href="{{ '/' | relative_url }}#centro">Il Centro</a>
       <a href="{{ '/persone/' | relative_url }}"{% if page.url == '/persone/' %} aria-current="page"{% endif %}>Persone</a>
-      <a href="{{ '/' | relative_url }}#progetti">Progetti</a>
-      <a href="{{ '/' | relative_url }}#risorse">Risorse</a>
+      <a href="{{ '/eventi/' | relative_url }}"{% if page.url == '/eventi/' %} aria-current="page"{% endif %}>Eventi</a>
+      <a href="{{ '/ricerca/' | relative_url }}"{% if page.url == '/ricerca/' %} aria-current="page"{% endif %}>Ricerca</a>
     </nav>
   </div>
 </header>

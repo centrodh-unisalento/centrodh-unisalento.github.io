@@ -4,7 +4,6 @@ lang: it
 url: https://centrodh-unisalento.github.io
 baseurl: ""
 theme: minima
-projects_url: https://github.com/centrodh-unisalento/home/projects
 plugins:
   - jekyll-seo-tag
 exclude:
