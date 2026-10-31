@@ -28,32 +28,33 @@ personalizzato. I percorsi degli asset usano il filtro Jekyll `relative_url`.
 
 ## Pagine e contenuti
 
-La navigazione comprende Il Centro (sezione della homepage), Persone
-(`/persone/`), Eventi (`/eventi/`) e Ricerca (`/ricerca/`). Homepage e menu
+La navigazione comprende Il Centro (sezione della homepage), Persone e ricerca
+(`/persone/`) ed Eventi (`/eventi/`). Il vecchio indirizzo `/ricerca/` reindirizza
+alla pagina unificata tramite il plugin GitHub Pages `jekyll-redirect-from`. Homepage e menu
 rimandano alle pagine interne, senza collegamenti a GitHub Projects.
 
 `eventi.html` contiene uno stato vuoto esplicito: non sono stati forniti eventi
 da pubblicare. Per aggiungerli, sostituire il blocco `.empty-state` con i dettagli
 degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazione.
-`ricerca.html` contiene soltanto la sezione Pubblicazioni, con le schede degli
-autori e i collegamenti al catalogo IRIS. La homepage non contiene la
+`persone.html` presenta la direzione e un’unica lista dei sei consiglieri,
+con un collegamento alle pubblicazioni IRIS sotto ogni nome. La homepage non contiene la
 grafica decorativa iniziale né la barra degli ambiti.
 
 ## Pubblicazioni IRIS
 
-Il componente riutilizzabile `_includes/pubblicazioni-iris.html`, inserito in
-`ricerca.html`, mostra otto schede sempre visibili: direttore, vicedirettore e sei
-componenti del Consiglio Direttivo. `_data/direttivo.yml` contiene nomi, ruoli,
-collegamenti istituzionali e identificativi autore IRIS forniti dal Centro;
-anche `persone.html` usa questo elenco per mantenere le due pagine coerenti.
+Il componente riutilizzabile `_includes/pubblicazioni-iris.html` riceve
+`person=person` e genera il collegamento sotto il nome in `persone.html`, per
+direttore, vicedirettore e sei componenti del Consiglio Direttivo.
+`_data/direttivo.yml` contiene nomi, ruoli, collegamenti istituzionali e
+identificativi autore IRIS forniti dal Centro, conservati senza modifiche.
 
-Ogni scheda collega alla ricerca autore IRIS con
+Ogni collegamento apre la ricerca autore IRIS con
 `sort_by=2&order=DESC`, 20 risultati per pagina e la paginazione del catalogo.
 Gli elenchi si aprono in una nuova scheda su IRIS: i titoli delle pubblicazioni
 non sono mostrati nella pagina del sito né copiati nel repository. Non servono
 JavaScript, plugin Jekyll personalizzati o workflow programmati.
 
-Non vengono usati iframe: la visibilità delle schede e dei collegamenti non
+Non vengono usati iframe: la visibilità dei nomi e dei collegamenti non
 dipende dalle politiche di incorporamento di IRIS. L'accesso a IRIS non è stato
 possibile dall'ambiente di sviluppo; la disponibilità del catalogo e i risultati
 degli autori vanno verificati esternamente. Per mostrare i titoli direttamente

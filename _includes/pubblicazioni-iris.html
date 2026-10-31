@@ -1,21 +1,2 @@
-<section class="content-section publications-section" aria-labelledby="pubblicazioni-title">
-  <div class="section-heading">
-    <h1 id="pubblicazioni-title">Pubblicazioni</h1>
-    <p>Le pubblicazioni del direttore, del vicedirettore e dei componenti del Consiglio Direttivo, dal catalogo IRIS dell’Università del Salento.</p>
-    <p class="publications-note">Gli elenchi delle pubblicazioni si consultano direttamente su IRIS, non in questa pagina. Usa il collegamento di ciascun autore per aprire il catalogo, ordinato per anno dal più recente, e la paginazione di IRIS per consultare gli altri risultati.</p>
-  </div>
-  <div class="publications-list">
-    {% for person in site.data.direttivo %}
-    {% capture iris_url %}https://iris.unisalento.it/browse?type=author&sort_by=2&order=DESC&rpp=20&etal=-1&authority={{ person.iris_authority | uri_escape }}&starts_with=&offset=0{% endcapture %}
-    <article class="publication-card">
-      <div class="publication-heading">
-        <h2 class="publication-author">{{ person.name | escape }}</h2>
-        <p class="publication-role">{{ person.role | escape }}</p>
-      </div>
-      <div class="publication-content">
-        <a class="text-link" href="{{ iris_url | escape }}" target="_blank" rel="noopener noreferrer">Apri su IRIS <span class="visually-hidden">le pubblicazioni di {{ person.name | escape }} (nuova scheda)</span><span aria-hidden="true">↗</span></a>
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
+{% capture iris_url %}https://iris.unisalento.it/browse?type=author&sort_by=2&order=DESC&rpp=20&etal=-1&authority={{ include.person.iris_authority | uri_escape }}&starts_with=&offset=0{% endcapture %}
+<a class="text-link iris-link" href="{{ iris_url | escape }}" target="_blank" rel="noopener noreferrer">Pubblicazioni su IRIS <span class="visually-hidden">di {{ include.person.name | escape }} (nuova scheda)</span><span aria-hidden="true">↗</span></a>

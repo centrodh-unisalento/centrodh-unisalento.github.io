@@ -1,13 +1,16 @@
 ---
 layout: default
-title: Persone
+title: Persone e ricerca
 permalink: /persone/
+redirect_from:
+  - /ricerca/
 ---
 <section class="people-hero" aria-labelledby="persone-title">
   <a class="text-link breadcrumb" href="{{ '/' | relative_url }}">Il Centro <span aria-hidden="true">/</span></a>
-  <p class="eyebrow">Le persone</p>
+  <p class="eyebrow">Persone e ricerca</p>
   <h1 id="persone-title">Saperi diversi.<br><em>Una prospettiva comune.</em></h1>
   <p>Le persone del Centro Interdipartimentale di Ricerca in Digital Humanities dell’Università del Salento.</p>
+  <p class="publications-note">Sotto ogni nome trovi il collegamento alle pubblicazioni su IRIS, il catalogo della ricerca dell’Ateneo. Gli elenchi si aprono in una nuova scheda, ordinati dal più recente.</p>
 </section>
 
 <section class="content-section people-section" aria-labelledby="direzione-title">
@@ -21,6 +24,7 @@ permalink: /persone/
     <article class="person-card leadership-card">
       <p class="eyebrow">{{ person.role | escape }}</p>
       <h3><a href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a></h3>
+      {% include pubblicazioni-iris.html person=person %}
     </article>
     {% endfor %}
   </div>
@@ -34,7 +38,10 @@ permalink: /persone/
   <ul class="council-list">
     {% assign council = site.data.direttivo | where: "group", "consiglio" %}
     {% for person in council %}
-    <li>{% if person.profile %}<a href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a>{% else %}{{ person.name | escape }}{% endif %}</li>
+    <li>
+      {% if person.profile %}<a class="person-profile" href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a>{% else %}<span class="person-name">{{ person.name | escape }}</span>{% endif %}
+      {% include pubblicazioni-iris.html person=person %}
+    </li>
     {% endfor %}
   </ul>
 </section>
