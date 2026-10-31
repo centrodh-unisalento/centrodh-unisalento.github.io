@@ -105,18 +105,13 @@ section { scroll-margin-top: 2rem; }
 .council-list { max-width: 760px; padding: 0; margin: 0; list-style: none; font-size: 1.1rem; }
 .council-list li { padding: 1rem 0; border-bottom: 1px solid $line; }
 .council-list li:first-child { border-top: 1px solid $line; }
-.council-list a { display: flex; justify-content: space-between; gap: 1rem; text-decoration: none; }
-.council-list a:hover { text-decoration: underline; }
-.council-list span { color: $muted; }
+.council-list .person-profile { display: flex; justify-content: space-between; gap: 1rem; text-decoration: none; }
+.council-list .person-profile:hover { text-decoration: underline; }
+.council-list .person-profile span { color: $muted; }
+.council-list .person-name { display: block; }
+.iris-link { display: block; width: fit-content; margin-top: .75rem; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 .publications-note { color: $muted; font-size: .85rem; }
-.publications-list { display: grid; gap: 1.25rem; }
-.publication-card { min-width: 0; border: 1px solid $line; border-top: 3px solid $yellow; border-radius: 4px; background: #fff; }
-.publication-heading { padding: 1.25rem; }
-.publication-author { margin-bottom: .5rem; font-family: inherit; font-size: 1.2rem; font-weight: 600; letter-spacing: normal; line-height: 1.3; }
-.publication-role { margin-bottom: 0; color: $muted; font-size: .8rem; }
-.publication-content { padding: 0 1.25rem 1.25rem; }
-.publication-content > a { display: inline-block; margin-bottom: 1rem; }
 
 @media (max-width: 1000px) {
   .wrapper { width: calc(100% - 64px); }
