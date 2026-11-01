@@ -36,10 +36,13 @@ rimandano alle pagine interne, senza collegamenti a GitHub Projects.
 `eventi.html` contiene uno stato vuoto esplicito: non sono stati forniti eventi
 da pubblicare. Per aggiungerli, sostituire il blocco `.empty-state` con i dettagli
 degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazione.
-`persone.html` presenta la direzione e un’unica lista dei sei consiglieri,
-con una preview delle ultime cinque pubblicazioni e il collegamento a IRIS
-sotto ogni nome. La homepage non contiene la
-grafica decorativa iniziale né la barra degli ambiti.
+`persone.html` presenta la direzione e i sei consiglieri in schede su due colonne,
+con una preview incorniciata delle ultime cinque pubblicazioni e il collegamento
+a IRIS sotto ogni nome. Su schermi piccoli le schede passano a una colonna.
+Nella sezione «Eventi e news» della homepage, il titolo «Gli appuntamenti del
+centro» affianca la scheda «Eventi news», che rimanda alla pagina degli eventi;
+su mobile il titolo precede la scheda. La homepage non contiene la grafica
+decorativa iniziale né la barra degli ambiti.
 
 ## Contatti e mailing list
 
