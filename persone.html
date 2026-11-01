@@ -10,7 +10,7 @@ redirect_from:
   <p class="eyebrow">Persone e ricerca</p>
   <h1 id="persone-title">Saperi diversi.<br><em>Una prospettiva comune.</em></h1>
   <p>Le persone del Centro Interdipartimentale di Ricerca in Digital Humanities dell’Università del Salento.</p>
-  <p class="publications-note">Sotto ogni nome trovi il collegamento alle pubblicazioni su IRIS, il catalogo della ricerca dell’Ateneo. Gli elenchi si aprono in una nuova scheda, ordinati dal più recente.</p>
+  <p class="publications-note">Per ogni persona trovi una preview delle ultime 5 pubblicazioni e il collegamento all’elenco completo su IRIS, il catalogo della ricerca dell’Ateneo. L’ordine è quello del catalogo, dal più recente, incluse le opere in corso di stampa. Anteprime aggiornate al <time datetime="{{ site.data.pubblicazioni.updated_at | escape }}">{{ site.data.pubblicazioni.updated_at | date: "%d/%m/%Y" }}</time>. I collegamenti a IRIS si aprono in una nuova scheda.</p>
 </section>
 
 <section class="content-section people-section" aria-labelledby="direzione-title">
@@ -39,7 +39,7 @@ redirect_from:
     {% assign council = site.data.direttivo | where: "group", "consiglio" %}
     {% for person in council %}
     <li>
-      {% if person.profile %}<a class="person-profile" href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a>{% else %}<span class="person-name">{{ person.name | escape }}</span>{% endif %}
+      <h3 class="council-name">{% if person.profile %}<a class="person-profile" href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a>{% else %}<span class="person-name">{{ person.name | escape }}</span>{% endif %}</h3>
       {% include pubblicazioni-iris.html person=person %}
     </li>
     {% endfor %}
