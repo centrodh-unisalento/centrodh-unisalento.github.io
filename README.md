@@ -37,7 +37,8 @@ rimandano alle pagine interne, senza collegamenti a GitHub Projects.
 da pubblicare. Per aggiungerli, sostituire il blocco `.empty-state` con i dettagli
 degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazione.
 `persone.html` presenta la direzione e un’unica lista dei sei consiglieri,
-con un collegamento alle pubblicazioni IRIS sotto ogni nome. La homepage non contiene la
+con una preview delle ultime cinque pubblicazioni e il collegamento a IRIS
+sotto ogni nome. La homepage non contiene la
 grafica decorativa iniziale né la barra degli ambiti.
 
 ## Contatti e mailing list
@@ -56,22 +57,39 @@ da un indirizzo non iscritto: il sito non configura né verifica il gruppo.
 ## Pubblicazioni IRIS
 
 Il componente riutilizzabile `_includes/pubblicazioni-iris.html` riceve
-`person=person` e genera il collegamento sotto il nome in `persone.html`, per
+`person=person` e genera l’anteprima e il collegamento sotto il nome in `persone.html`, per
 direttore, vicedirettore e sei componenti del Consiglio Direttivo.
 `_data/direttivo.yml` contiene nomi, ruoli, collegamenti istituzionali e
 identificativi autore IRIS forniti dal Centro, conservati senza modifiche.
 
 Ogni collegamento apre la ricerca autore IRIS con
 `sort_by=2&order=DESC`, 20 risultati per pagina e la paginazione del catalogo.
-Gli elenchi si aprono in una nuova scheda su IRIS: i titoli delle pubblicazioni
-non sono mostrati nella pagina del sito né copiati nel repository. Non servono
-JavaScript, plugin Jekyll personalizzati o workflow programmati.
+`_data/pubblicazioni.json` contiene una fotografia delle prime cinque voci
+pubbliche di ciascun autore, recuperate dalle pagine IRIS ordinate per data di
+pubblicazione (`sort_by=2&order=DESC&rpp=5&offset=0`). Si conservano l’ordine
+del catalogo, i titoli, l’anno o la dicitura «In corso di stampa» e i collegamenti
+permanenti `/handle/…`. Non si deducono titoli o date dalle colonne ISI/Scopus
+del CSV, che possono essere incomplete. Ogni titolo apre la propria scheda
+IRIS in una nuova scheda; il collegamento all’elenco completo resta visibile.
 
-Non vengono usati iframe: la visibilità dei nomi e dei collegamenti non
-dipende dalle politiche di incorporamento di IRIS. L'accesso a IRIS non è stato
-possibile dall'ambiente di sviluppo; la disponibilità del catalogo e i risultati
-degli autori vanno verificati esternamente. Per mostrare i titoli direttamente
-nel sito occorre un'integrazione autorizzata per recuperare e pubblicare i dati.
+Le anteprime sono generate da Jekyll, senza JavaScript, iframe o richieste
+dal browser a IRIS. Restano leggibili anche se il catalogo è temporaneamente
+irraggiungibile. Non sono aggiornate automaticamente: la data della fotografia
+è mostrata nella pagina Persone e ricerca.
+
+Per aggiornare le anteprime, consultare per ciascun `iris_authority` le prime
+cinque voci della ricerca pubblica ordinata per data e aggiornare la relativa
+lista in `authors` di `_data/pubblicazioni.json`. Ogni voce deve contenere
+`title`, `date_label` e `url` (scheda permanente HTTPS su IRIS). Conservare
+l’ordine di IRIS, incluse le opere in corso di stampa; aggiornare `updated_at`
+nel formato `AAAA-MM-GG` solo dopo aver verificato tutti gli autori. Pubblicare
+i dati insieme alle pagine sul branch `main`. Per persone senza dati viene
+mostrato un avviso esplicito con il collegamento al catalogo.
+
+I metadati della fotografia iniziale sono stati recuperati da un runner GitHub
+senza credenziali IRIS. Non vengono copiati abstract, testi integrali o allegati.
+La disponibilità pubblica dei metadati non attesta una licenza di riuso dei
+documenti collegati, che rimangono su IRIS.
 
 Per aggiornare la composizione del direttivo, modificare `_data/direttivo.yml`;
 ogni nuova persona deve avere il proprio identificativo `iris_authority`,
