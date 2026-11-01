@@ -77,6 +77,24 @@ Per aggiornare la composizione del direttivo, modificare `_data/direttivo.yml`;
 ogni nuova persona deve avere il proprio identificativo `iris_authority`,
 ricavato dal parametro `authority` della ricerca IRIS, non dal nome.
 
+### Prova manuale dell'esportazione
+
+Il workflow `.github/workflows/test-iris-export.yml` verifica l'accesso pubblico
+al CSV da un runner GitHub, senza credenziali IRIS. Non ha una pianificazione,
+non scrive nel repository e non pubblica o modifica le pagine del sito.
+
+In **Actions → Test IRIS export → Run workflow**, selezionare l'identificativo
+autore (predefinito: `rp22433`, Paolo Baldi) e avviare la prova. Gli altri codici
+sono in `_data/direttivo.yml`. L'esecuzione controlla la struttura del CSV e la
+presenza di record, segnala se esistono colonne per titolo e data di pubblicazione
+e, solo dopo la validazione, allega il file e un rapporto come artifact
+`iris-export-<identificativo>`, conservato per sette giorni.
+
+La richiesta usa `rpp=20`: la prova non garantisce che siano esportati tutti
+i risultati, che il BibTeX sia disponibile o che sia consentito ripubblicare
+i metadati. Errori di rete, risposte HTTP di errore, pagine HTML al posto del CSV
+ed esportazioni vuote fanno fallire il workflow; i dettagli sono nei log.
+
 ## Sviluppo locale
 
 Con Ruby 3.x e Bundler installati (le dipendenze `github-pages` non supportano
