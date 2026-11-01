@@ -1,0 +1,41 @@
+name: Update IRIS previews
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - copilot/iris-previews
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - name: Download public author pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p exports
+          for authority in rp22433 rp06689 rp04403 rp12698 rp01327 rp20209 rp07530 rp03477; do
+            curl --fail --location --silent --show-error \
+              --connect-timeout 20 --max-time 90 --retry 1 \
+              --get 'https://iris.unisalento.it/browse' \
+              --data-urlencode 'type=author' \
+              --data-urlencode "authority=$authority" \
+              --data-urlencode 'offset=0' \
+              --data-urlencode 'sort_by=2' \
+              --data-urlencode 'order=DESC' \
+              --data-urlencode 'rpp=5' \
+              --data-urlencode 'etal=-1' \
+              --output "exports/$authority.html"
+          done
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: iris-author-pages
+          path: exports/
+          if-no-files-found: error
+          retention-days: 1
