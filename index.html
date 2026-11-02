@@ -13,6 +13,20 @@ title: Umanesimo e digitale, in dialogo
       <a class="text-link" href="#centro">Scopri il Centro <span aria-hidden="true">↓</span></a>
     </div>
   </div>
+  <div class="photo-reel-heading">
+    <p class="eyebrow" id="photo-reel-title">La nostra comunità</p>
+    <p id="photo-reel-hint">Scorri per vedere le foto <span aria-hidden="true">→</span></p>
+  </div>
+  <div class="photo-reel" role="group" aria-labelledby="photo-reel-title" aria-describedby="photo-reel-hint" tabindex="0">
+    <figure class="photo-reel-slide">
+      <img src="{{ '/edefai.jpg' | relative_url }}" alt="Foto di gruppo EDEFAI davanti alle colonne di un edificio storico." width="2048" height="1152" decoding="async">
+      <figcaption><span>EDEFAI</span><span class="photo-reel-count">1 / 2</span></figcaption>
+    </figure>
+    <figure class="photo-reel-slide">
+      <img src="{{ '/aiucd2022.jpeg' | relative_url }}" alt="Foto di gruppo AIUCD 2022 sulla scalinata di un edificio storico." width="2048" height="918" loading="lazy" decoding="async">
+      <figcaption><span>AIUCD 2022</span><span class="photo-reel-count">2 / 2</span></figcaption>
+    </figure>
+  </div>
 </section>
 
 <section id="centro" class="content-section intro-section" aria-labelledby="centro-title">
@@ -25,6 +39,30 @@ title: Umanesimo e digitale, in dialogo
     Questi filoni convergono nell'analisi dell'impatto trasformativo dell'Intelligenza Artificiale e i suoi problemi in ambiti artistici,scientifici,etici,socio-economici.</p>
     <a class="text-link" href="{{ '/persone/' | relative_url }}">Conosci le persone e la loro ricerca <span aria-hidden="true">↗</span></a>
   </div>
+</section>
+
+<section id="news" class="content-section" aria-labelledby="news-title">
+  <div class="section-heading">
+    <p class="eyebrow">News & Blog</p>
+    <h2 id="news-title">Notizie dal Centro</h2>
+  </div>
+  {% if site.posts.size > 0 %}
+    <div class="news-grid">
+      {% for post in site.posts limit:3 %}
+        <article class="news-card">
+          <time class="news-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d/%m/%Y' }}</time>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+          <p>{{ post.excerpt | strip_html | normalize_whitespace | truncatewords: 35 | escape }}</p>
+          <a class="text-link" href="{{ post.url | relative_url }}">Leggi la notizia<span class="visually-hidden">: {{ post.title | escape }}</span> <span aria-hidden="true">→</span></a>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <p>Le prossime notizie, qui.</p>
+      <p>Questo spazio è dedicato alle novità, ai progetti e ai racconti delle attività del Centro. Non ci sono ancora articoli pubblicati.</p>
+    </div>
+  {% endif %}
 </section>
 
 <section id="eventi" class="content-section feature-section" aria-labelledby="eventi-title">

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article>
+  <header class="page-hero">
+    <a class="text-link breadcrumb" href="{{ '/#news' | relative_url }}">News dal Centro <span aria-hidden="true">/</span></a>
+    <p class="eyebrow">News & Blog</p>
+    <h1>{{ page.title | escape }}</h1>
+    <time class="news-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d/%m/%Y' }}</time>
+  </header>
+  <div class="content-section post-content">
+    {{ content }}
+  </div>
+</article>
