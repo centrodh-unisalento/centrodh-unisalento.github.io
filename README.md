@@ -44,6 +44,33 @@ centro» affianca la scheda «Eventi news», che rimanda alla pagina degli event
 su mobile il titolo precede la scheda. La homepage non contiene la grafica
 decorativa iniziale né la barra degli ambiti.
 
+Sotto il testo introduttivo della homepage, un reel fotografico presenta
+`edefai.jpg` e `aiucd2022.jpeg`, con didascalie e testi alternativi. Le foto
+rimangono intere, senza ritagli o testo sovrapposto. Il reel usa lo scorrimento
+orizzontale nativo (touch, trackpad o frecce della tastiera dopo averlo
+selezionato con Tab), senza JavaScript né avanzamento automatico.
+
+La homepage mantiene uno spazio autonomo per la descrizione del Centro
+(`#centro`) e uno per news e articoli in stile blog (`#news`), distinto
+dal rimando agli eventi. La sezione news mostra i tre articoli più recenti,
+con data, anteprima e collegamento al testo completo; finché non ci sono
+articoli, mostra un messaggio esplicito senza notizie dimostrative.
+
+Per pubblicare una notizia, creare un file Markdown in
+`_posts/AAAA-MM-GG-titolo.md` con questa intestazione, seguita dal testo:
+
+```yaml
+---
+layout: post
+title: "Titolo della notizia"
+date: 2026-11-02
+---
+```
+
+Il primo paragrafo diventa l'anteprima nella homepage. Il layout
+`_layouts/post.html` mostra titolo, data e testo completo, con un collegamento
+di ritorno alle news. Le notizie vengono pubblicate insieme al sito da `main`.
+
 ## Contatti e mailing list
 
 Il piè di pagina condiviso (`_includes/footer.html`) presenta il contatto
