@@ -44,8 +44,10 @@ centro» affianca la scheda «Eventi news», che rimanda alla pagina degli event
 su mobile il titolo precede la scheda. La homepage non contiene la grafica
 decorativa iniziale né la barra degli ambiti.
 
-Sotto il testo introduttivo della homepage, un reel fotografico presenta
-`edefai.jpg` e `aiucd2022.jpeg`, con didascalie e testi alternativi. Le foto
+Sotto il testo introduttivo della homepage compare «Notizie dal Centro»,
+seguita da un reel fotografico con `aiucd2022.jpeg` e poi `edefai.jpg`,
+con didascalie e testi alternativi. Foto e didascalie rimandano ai rispettivi
+siti: AIUCD 2022 e «Edefai - Logic for the AI spring 2026». Le foto
 rimangono intere, senza ritagli o testo sovrapposto. Il reel usa lo scorrimento
 orizzontale nativo (touch, trackpad o frecce della tastiera dopo averlo
 selezionato con Tab), senza JavaScript né avanzamento automatico.
