@@ -1,9 +1,7 @@
 {% capture iris_url %}https://iris.unisalento.it/browse?type=author&sort_by=2&order=DESC&rpp=20&etal=-1&authority={{ include.person.iris_authority | uri_escape }}&starts_with=&offset=0{% endcapture %}
 {% assign publications = site.data.pubblicazioni.authors[include.person.iris_authority] %}
 {% assign selection = site.data.pubblicazioni.selections[include.person.iris_authority] %}
-{% unless selection %}
-  {% assign publications = publications | slice: 0, 5 %}
-{% endunless %}
+{% assign publications = publications | slice: 0, 5 %}
 <div class="publications-preview">
   <h4 class="publications-heading">{{ selection.heading | default: "Ultime 5 pubblicazioni" | escape }} <span class="visually-hidden">di {{ include.person.name | escape }}</span></h4>
   {% if publications and publications.size > 0 %}

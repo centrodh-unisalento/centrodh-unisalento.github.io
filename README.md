@@ -115,23 +115,26 @@ dal browser a IRIS. Restano leggibili anche se il catalogo è temporaneamente
 irraggiungibile. Non sono aggiornate automaticamente: la data della fotografia
 è registrata nei dati.
 
-Per Fabio Ciracì (`rp01327`) l’anteprima mostra invece tutte le 11 pubblicazioni
-selezionate a tema digital humanities, senza il limite di cinque voci, sotto
+Per Fabio Ciracì (`rp01327`) l’anteprima mostra le prime cinque pubblicazioni
+della selezione a tema digital humanities, sotto
 il titolo «Pubblicazioni su digital humanities». La selezione del 5 novembre
 2026 è stata effettuata sulle 73 voci del catalogo pubblico, verificando titoli,
 parole chiave e abstract per temi quali digitale, informazione, algoritmi,
 memoria e fonti per la ricerca. Comprende anche «Simulatio», la «Prefazione»
-agli atti AIUCD 2022 e l’«Introduzione» a *Filosofia digitale*, la cui pertinenza
+agli atti AIUCD 2022 e *Filosofia digitale*, la cui pertinenza
 è confermata dagli abstract. Gli abstract sono consultati solo per la selezione,
 non copiati nel sito. Si mantengono titoli, anni e ordine del catalogo.
 La sezione `selections` dei dati contiene il titolo dell’anteprima e la data
 di aggiornamento specifica dell’autore; gli altri autori restano invariati.
+Il componente limita tutte le anteprime a un massimo di cinque voci,
+incluse le selezioni tematiche.
 
 Per aggiornare le anteprime, consultare per ciascun `iris_authority` le prime
 cinque voci della ricerca pubblica ordinata per data e aggiornare la relativa
 lista in `authors` di `_data/pubblicazioni.json`. Per Ciracì, consultare invece
-l’intero elenco e mantenere la selezione tematica verificando anche parole chiave
-e abstract, senza sostituirla con le cinque opere più recenti; aggiornare la
+l’intero elenco e mantenere le prime cinque voci della selezione tematica,
+verificando anche parole chiave e abstract, senza sostituirle con le cinque
+opere più recenti non filtrate per tema; aggiornare la
 data in `selections.rp01327.updated_at`. Ogni voce deve contenere
 `title`, `date_label` e `url` (scheda permanente HTTPS su IRIS). Conservare
 l’ordine di IRIS, incluse le opere in corso di stampa; aggiornare `updated_at`
