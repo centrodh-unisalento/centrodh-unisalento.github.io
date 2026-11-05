@@ -39,6 +39,9 @@ degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazio
 `persone.html` presenta la direzione e i sei consiglieri in schede su due colonne,
 con una preview incorniciata delle pubblicazioni e il collegamento
 a IRIS sotto ogni nome. Su schermi piccoli le schede passano a una colonna.
+La descrizione delle linee di ricerca è affiancata dai collegamenti ad AVR Lab,
+Ethics in the Wild e Fondazione per la sostenibilità digitale; su mobile i
+collegamenti seguono la descrizione. Testi e URL si modificano in `persone.html`.
 Nella sezione «Eventi e news» della homepage, il titolo «Gli appuntamenti del
 centro» affianca la scheda «Eventi news», che rimanda alla pagina degli eventi;
 su mobile il titolo precede la scheda. La homepage non contiene la grafica
