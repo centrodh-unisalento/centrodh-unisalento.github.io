@@ -24,6 +24,12 @@ jobs:
             --data-urlencode 'etal=-1' \
             --output exports/ciraci.html
           grep -q '/handle/11587/' exports/ciraci.html
+          for handle in 528086 521986 462703 462698 462697 462695 462696 464255 425861 535369 512677; do
+            curl --fail --location --silent --show-error \
+              --connect-timeout 20 --max-time 90 --retry 1 \
+              "https://iris.unisalento.it/handle/11587/$handle" \
+              --output "exports/$handle.html"
+          done
       - name: Attach public metadata
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
