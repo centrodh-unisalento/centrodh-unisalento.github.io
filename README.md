@@ -112,22 +112,24 @@ del catalogo, i titoli, l’anno o la dicitura «In corso di stampa» e i colleg
 permanenti `/handle/…`. Non si deducono titoli o date dalle colonne ISI/Scopus
 del CSV, che possono essere incomplete. Ogni titolo apre la propria scheda
 IRIS in una nuova scheda; il collegamento all’elenco completo resta visibile.
+Tutti i box hanno l’intestazione «Pubblicazioni recenti», anche per Ciracì.
 
 Le anteprime sono generate da Jekyll, senza JavaScript, iframe o richieste
 dal browser a IRIS. Restano leggibili anche se il catalogo è temporaneamente
 irraggiungibile. Non sono aggiornate automaticamente: la data della fotografia
 è registrata nei dati.
 
-Per Fabio Ciracì (`rp01327`) l’anteprima mostra le prime cinque pubblicazioni
-della selezione a tema digital humanities, sotto
-il titolo «Pubblicazioni su digital humanities». La selezione del 5 novembre
+Per Fabio Ciracì (`rp01327`) l’anteprima mostra cinque pubblicazioni
+della selezione a tema digital humanities. La selezione del 5 novembre
 2026 è stata effettuata sulle 73 voci del catalogo pubblico, verificando titoli,
 parole chiave e abstract per temi quali digitale, informazione, algoritmi,
-memoria e fonti per la ricerca. Comprende anche «Simulatio», la «Prefazione»
-agli atti AIUCD 2022 e *Filosofia digitale*, la cui pertinenza
+memoria e fonti per la ricerca. Comprende anche «Simulatio»
+e *Filosofia digitale*, la cui pertinenza
 è confermata dagli abstract. Gli abstract sono consultati solo per la selezione,
 non copiati nel sito. Si mantengono titoli, anni e ordine del catalogo.
-La sezione `selections` dei dati contiene il titolo dell’anteprima e la data
+«Prefazione» è stata sostituita con l’articolo «Mitologie 2.0: Digital Platforms
+& umbrella terms», pubblicato su *H-ermes. Journal of Communication* nel 2013.
+La sezione `selections` dei dati contiene la data
 di aggiornamento specifica dell’autore; gli altri autori restano invariati.
 Il componente limita tutte le anteprime a un massimo di cinque voci,
 incluse le selezioni tematiche.
@@ -135,7 +137,7 @@ incluse le selezioni tematiche.
 Per aggiornare le anteprime, consultare per ciascun `iris_authority` le prime
 cinque voci della ricerca pubblica ordinata per data e aggiornare la relativa
 lista in `authors` di `_data/pubblicazioni.json`. Per Ciracì, consultare invece
-l’intero elenco e mantenere le prime cinque voci della selezione tematica,
+l’intero elenco e mantenere cinque voci della selezione tematica,
 verificando anche parole chiave e abstract, senza sostituirle con le cinque
 opere più recenti non filtrate per tema; aggiornare la
 data in `selections.rp01327.updated_at`. Ogni voce deve contenere

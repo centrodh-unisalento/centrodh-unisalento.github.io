@@ -2,7 +2,6 @@
   "updated_at": "2026-11-01",
   "selections": {
     "rp01327": {
-      "heading": "Pubblicazioni su digital humanities",
       "updated_at": "2026-11-05"
     }
   },
@@ -19,11 +18,6 @@
         "url": "https://iris.unisalento.it/handle/11587/521986"
       },
       {
-        "title": "Prefazione",
-        "date_label": "2022",
-        "url": "https://iris.unisalento.it/handle/11587/462703"
-      },
-      {
         "title": "AIUCD 2022-Proceedings",
         "date_label": "2022",
         "url": "https://iris.unisalento.it/handle/11587/462698"
@@ -32,6 +26,11 @@
         "title": "Filosofia digitale",
         "date_label": "2021",
         "url": "https://iris.unisalento.it/handle/11587/462697"
+      },
+      {
+        "title": "Mitologie 2.0: Digital Platforms & umbrella terms",
+        "date_label": "2013",
+        "url": "https://iris.unisalento.it/handle/11587/535369"
       }
     ],
     "rp03477": [
