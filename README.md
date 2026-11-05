@@ -37,7 +37,7 @@ rimandano alle pagine interne, senza collegamenti a GitHub Projects.
 da pubblicare. Per aggiungerli, sostituire il blocco `.empty-state` con i dettagli
 degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazione.
 `persone.html` presenta la direzione e i sei consiglieri in schede su due colonne,
-con una preview incorniciata delle ultime cinque pubblicazioni e il collegamento
+con una preview incorniciata delle pubblicazioni e il collegamento
 a IRIS sotto ogni nome. Su schermi piccoli le schede passano a una colonna.
 Nella sezione «Eventi e news» della homepage, il titolo «Gli appuntamenti del
 centro» affianca la scheda «Eventi news», che rimanda alla pagina degli eventi;
@@ -97,7 +97,8 @@ identificativi autore IRIS forniti dal Centro, conservati senza modifiche.
 Ogni collegamento apre la ricerca autore IRIS con
 `sort_by=2&order=DESC`, 20 risultati per pagina e la paginazione del catalogo.
 `_data/pubblicazioni.json` contiene una fotografia delle prime cinque voci
-pubbliche di ciascun autore, recuperate dalle pagine IRIS ordinate per data di
+pubbliche di ciascun autore, salvo la selezione tematica di Fabio Ciracì,
+recuperate dalle pagine IRIS ordinate per data di
 pubblicazione (`sort_by=2&order=DESC&rpp=5&offset=0`). Si conservano l’ordine
 del catalogo, i titoli, l’anno o la dicitura «In corso di stampa» e i collegamenti
 permanenti `/handle/…`. Non si deducono titoli o date dalle colonne ISI/Scopus
@@ -107,11 +108,26 @@ IRIS in una nuova scheda; il collegamento all’elenco completo resta visibile.
 Le anteprime sono generate da Jekyll, senza JavaScript, iframe o richieste
 dal browser a IRIS. Restano leggibili anche se il catalogo è temporaneamente
 irraggiungibile. Non sono aggiornate automaticamente: la data della fotografia
-è mostrata nella pagina Persone e ricerca.
+è registrata nei dati.
+
+Per Fabio Ciracì (`rp01327`) l’anteprima mostra invece tutte le 11 pubblicazioni
+selezionate a tema digital humanities, senza il limite di cinque voci, sotto
+il titolo «Pubblicazioni su digital humanities». La selezione del 5 novembre
+2026 è stata effettuata sulle 73 voci del catalogo pubblico, verificando titoli,
+parole chiave e abstract per temi quali digitale, informazione, algoritmi,
+memoria e fonti per la ricerca. Comprende anche «Simulatio», la «Prefazione»
+agli atti AIUCD 2022 e l’«Introduzione» a *Filosofia digitale*, la cui pertinenza
+è confermata dagli abstract. Gli abstract sono consultati solo per la selezione,
+non copiati nel sito. Si mantengono titoli, anni e ordine del catalogo.
+La sezione `selections` dei dati contiene il titolo dell’anteprima e la data
+di aggiornamento specifica dell’autore; gli altri autori restano invariati.
 
 Per aggiornare le anteprime, consultare per ciascun `iris_authority` le prime
 cinque voci della ricerca pubblica ordinata per data e aggiornare la relativa
-lista in `authors` di `_data/pubblicazioni.json`. Ogni voce deve contenere
+lista in `authors` di `_data/pubblicazioni.json`. Per Ciracì, consultare invece
+l’intero elenco e mantenere la selezione tematica verificando anche parole chiave
+e abstract, senza sostituirla con le cinque opere più recenti; aggiornare la
+data in `selections.rp01327.updated_at`. Ogni voce deve contenere
 `title`, `date_label` e `url` (scheda permanente HTTPS su IRIS). Conservare
 l’ordine di IRIS, incluse le opere in corso di stampa; aggiornare `updated_at`
 nel formato `AAAA-MM-GG` solo dopo aver verificato tutti gli autori. Pubblicare

@@ -1,31 +1,67 @@
 {
   "updated_at": "2026-11-01",
+  "selections": {
+    "rp01327": {
+      "heading": "Pubblicazioni su digital humanities",
+      "updated_at": "2026-11-05"
+    }
+  },
   "authors": {
     "rp01327": [
       {
-        "title": "Ragione e antiragione nei pensatori metafisici della Schopenhauer-Schule: Julius Bahnsen, Eduard von Hartmann e Philipp Mainländer",
-        "date_label": "2025",
-        "url": "https://iris.unisalento.it/handle/11587/551646"
-      },
-      {
-        "title": "Su Schopenhauer. L’eredità kantiana, la dottrina delle idee, l’Oriente",
-        "date_label": "2025",
-        "url": "https://iris.unisalento.it/handle/11587/550250"
-      },
-      {
-        "title": "Mainländeriana",
-        "date_label": "2025",
-        "url": "https://iris.unisalento.it/handle/11587/550251"
-      },
-      {
-        "title": "Schopenhauer e il criterio patologico della morale Prospettive di ricerca per un’etica orientata al paziente",
+        "title": "Simulatio: Introduzione al numero tematico",
         "date_label": "2024",
-        "url": "https://iris.unisalento.it/handle/11587/512682"
+        "url": "https://iris.unisalento.it/handle/11587/528086"
       },
       {
-        "title": "Lo Schopenhauer di Giorgio De Chirico",
+        "title": "Algo(r)etica e immigrazione",
         "date_label": "2024",
-        "url": "https://iris.unisalento.it/handle/11587/549206"
+        "url": "https://iris.unisalento.it/handle/11587/521986"
+      },
+      {
+        "title": "Prefazione",
+        "date_label": "2022",
+        "url": "https://iris.unisalento.it/handle/11587/462703"
+      },
+      {
+        "title": "AIUCD 2022-Proceedings",
+        "date_label": "2022",
+        "url": "https://iris.unisalento.it/handle/11587/462698"
+      },
+      {
+        "title": "Filosofia digitale",
+        "date_label": "2021",
+        "url": "https://iris.unisalento.it/handle/11587/462697"
+      },
+      {
+        "title": "Per una teoria critica del digitale: fake-news e postverità alla luce della logica della verosimiglianza",
+        "date_label": "2021",
+        "url": "https://iris.unisalento.it/handle/11587/462695"
+      },
+      {
+        "title": "Introduzione",
+        "date_label": "2021",
+        "url": "https://iris.unisalento.it/handle/11587/462696"
+      },
+      {
+        "title": "Le digital humanities come superamento delle due culture",
+        "date_label": "2021",
+        "url": "https://iris.unisalento.it/handle/11587/464255"
+      },
+      {
+        "title": "Feticci digitali e memorie parallele. Una proposta minimalista",
+        "date_label": "2018",
+        "url": "https://iris.unisalento.it/handle/11587/425861"
+      },
+      {
+        "title": "Mitologie 2.0: Digital Platforms & umbrella terms",
+        "date_label": "2013",
+        "url": "https://iris.unisalento.it/handle/11587/535369"
+      },
+      {
+        "title": "Informatica per le scienze umane. Fonti scientifiche e strumenti per la ricerca storico-filosofica in ambiente digitale, pref. di Gino Roncaglia, McGraw-Hill, 2012",
+        "date_label": "2012",
+        "url": "https://iris.unisalento.it/handle/11587/512677"
       }
     ],
     "rp03477": [
