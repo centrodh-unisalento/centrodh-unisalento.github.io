@@ -39,15 +39,16 @@ section { scroll-margin-top: 2rem; }
 .main-nav a { display: flex; align-items: center; min-height: 44px; padding: .35rem 0; text-decoration: none; border-bottom: 2px solid transparent; }
 .main-nav a:hover, .main-nav a[aria-current="page"] { border-color: $ink; }
 .page-content { padding-top: 3rem; }
-.hero { padding-bottom: 3rem; border-bottom: 1px solid $line; }
-.hero-copy { max-width: 900px; padding: 1.5rem 0; }
+.page-content.home-content { padding-top: 1.5rem; }
+.hero { padding-bottom: 1.5rem; border-bottom: 1px solid $line; }
+.hero-copy { padding: 0; }
 .eyebrow { color: $muted; font-size: .68rem; line-height: 1.5; text-transform: uppercase; font-weight: 600; letter-spacing: .13em; }
 .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: .45rem; border-radius: 50%; background: #8c7120; vertical-align: middle; }
-.hero h1 { margin: 1.7rem 0; }
+.hero h1 { margin: .75rem 0; font-size: clamp(1.1rem, 2.5vw, 2rem); }
 .hero h1 em, .people-hero h1 em { color: #806519; }
 .hero-description { font-size: 1.05rem; line-height: 1.5; font-weight: 600; }
 .hero-intro { max-width: 40ch; color: $muted; font-size: .95rem; }
-.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; }
 .photo-reel-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; margin-top: 2rem; margin-bottom: 1rem; }
 .photo-reel-heading p { margin: 0; }
 .photo-reel-heading > p:last-child { color: $muted; font-size: .75rem; }
@@ -63,6 +64,11 @@ section { scroll-margin-top: 2rem; }
 .text-link { font-size: .85rem; font-weight: 600; }
 .text-link span { margin-left: .5rem; }
 .content-section { padding: 5rem 0; border-bottom: 1px solid $line; }
+.hero + #news { padding-block: 1.5rem; }
+.hero + #news .section-heading { margin-bottom: 1rem; }
+.hero + #news h2 { font-size: clamp(1.5rem, 3.3vw, 2.9rem); }
+.hero + #news .eyebrow { margin-bottom: .5rem; }
+.hero + #news .news-card { padding: 1rem; }
 .intro-section, .feature-section { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
 .content-section .eyebrow { margin-bottom: 1.3rem; }
 .section-copy { padding-top: 2.3rem; }
@@ -145,7 +151,6 @@ section { scroll-margin-top: 2rem; }
   .brand { width: 175px; }
   .main-nav { gap: 1rem; font-size: .8rem; }
   .hero-copy { padding: 0; }
-  .hero h1 { font-size: clamp(3.4rem, 9vw, 4.5rem); }
   .intro-section, .feature-section { grid-template-columns: 1fr; gap: 1rem; }
   .news-grid { grid-template-columns: 1fr; }
   .section-copy { padding-top: 0; }
@@ -160,10 +165,11 @@ section { scroll-margin-top: 2rem; }
   .brand { width: 180px; }
   .main-nav { width: 100%; justify-content: space-between; gap: .5rem; }
   .page-content { padding-top: 2rem; }
-  .hero h1 { margin-block: 1.3rem; }
   .hero-description { font-size: .95rem; }
   .hero .eyebrow { font-size: .6rem; letter-spacing: .06em; }
-  .hero-actions { gap: 1rem; }
+  .hero-actions { gap: .5rem; }
+  .hero-actions .button { gap: .5rem; padding: .6rem; font-size: .75rem; }
+  .hero-actions .text-link { font-size: .75rem; }
   .feature-link, .empty-state { padding: 1.5rem; }
   .feature-link-title { font-size: 2.4rem; }
   .footer-inner, .footer-bottom { flex-direction: column; }

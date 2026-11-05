@@ -8,7 +8,7 @@
   </head>
   <body>
     {% include header.html %}
-    <main id="contenuto" class="page-content" tabindex="-1">
+    <main id="contenuto" class="page-content{% if page.url == '/' %} home-content{% endif %}" tabindex="-1">
       <div class="wrapper">
         {{ content }}
       </div>

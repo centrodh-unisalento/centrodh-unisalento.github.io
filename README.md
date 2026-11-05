@@ -44,7 +44,11 @@ centro» affianca la scheda «Eventi news», che rimanda alla pagina degli event
 su mobile il titolo precede la scheda. La homepage non contiene la grafica
 decorativa iniziale né la barra degli ambiti.
 
-Sotto il testo introduttivo della homepage compare «Notizie dal Centro»,
+La homepage presenta il nome completo del Centro in un titolo compatto, su
+una riga su desktop e con ritorno a capo naturale sugli schermi piccoli.
+La frase introduttiva è rimossa e gli spazi sopra le news sono ridotti per
+renderle visibili all'apertura della pagina.
+Subito sotto l'intestazione compare «Notizie dal Centro»,
 seguita da un reel fotografico con `aiucd2022.jpeg` e poi `edefai.jpg`,
 con didascalie e testi alternativi. Foto e didascalie rimandano ai rispettivi
 siti: AIUCD 2022 e «Edefai - Logic for the AI spring 2026». Le foto
@@ -57,6 +61,7 @@ La homepage mantiene uno spazio autonomo per la descrizione del Centro
 dal rimando agli eventi. La sezione news mostra i tre articoli più recenti,
 con data, anteprima e collegamento al testo completo; finché non ci sono
 articoli, mostra un messaggio esplicito senza notizie dimostrative.
+La notizia «LOADING 2027» contiene il testo «Loading... :)».
 
 Per pubblicare una notizia, creare un file Markdown in
 `_posts/AAAA-MM-GG-titolo.md` con questa intestazione, seguita dal testo:
