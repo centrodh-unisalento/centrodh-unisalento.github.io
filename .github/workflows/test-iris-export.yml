@@ -1,126 +1,33 @@
-name: Test IRIS export
-
+name: Retrieve Ciraci IRIS metadata
 on:
   workflow_dispatch:
-    inputs:
-      authority:
-        description: Identificativo autore IRIS
-        required: true
-        type: choice
-        default: rp22433
-        options:
-          - rp22433
-          - rp06689
-          - rp04403
-          - rp12698
-          - rp01327
-          - rp20209
-          - rp07530
-          - rp03477
-
 permissions: {}
-
 jobs:
   download:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    env:
-      IRIS_AUTHORITY: ${{ inputs.authority }}
     steps:
-      - name: Download public CSV without authentication
+      - name: Download public author catalogue
         shell: bash
         run: |
           set -euo pipefail
-          if [[ ! "$IRIS_AUTHORITY" =~ ^rp[0-9]+$ ]]; then
-            echo "::error::Invalid IRIS author identifier"
-            exit 1
-          fi
           mkdir -p exports
           curl --fail --location --silent --show-error \
             --connect-timeout 20 --max-time 90 --retry 1 \
             --get 'https://iris.unisalento.it/browse' \
             --data-urlencode 'type=author' \
-            --data-urlencode "authority=$IRIS_AUTHORITY" \
+            --data-urlencode 'authority=rp01327' \
             --data-urlencode 'offset=0' \
             --data-urlencode 'sort_by=2' \
             --data-urlencode 'order=DESC' \
-            --data-urlencode 'rpp=20' \
-            --data-urlencode 'format=dspace_csv' \
-            --data-urlencode 'submit_export_metadata=submit' \
-            --output exports/result.csv \
-            --write-out 'HTTP %{http_code}; content type: %{content_type}\n'
-
-      - name: Check exported metadata
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          import csv
-          import os
-          from pathlib import Path
-
-          with Path("exports/result.csv").open(
-              encoding="utf-8-sig", newline=""
-          ) as source:
-              reader = csv.DictReader(source, strict=True)
-              columns = reader.fieldnames or []
-              if not {"id", "collection"}.issubset(columns):
-                  raise SystemExit(
-                      "::error::Response is not the expected IRIS CSV; "
-                      "it may be an HTML or login page."
-                  )
-              records = list(reader)
-
-          if not records:
-              raise SystemExit("::error::IRIS returned no metadata records.")
-          if any(
-              not record.get("id")
-              or None in record
-              or any(value is None for value in record.values())
-              for record in records
-          ):
-              raise SystemExit("::error::IRIS CSV contains malformed records.")
-
-          title_present = any(
-              column == "dc.title" or column.startswith("dc.title[")
-              for column in columns
-          )
-          year_present = any(
-              column == "dc.date.issued"
-              or column.startswith("dc.date.issued[")
-              for column in columns
-          )
-          summary = (
-              "## IRIS export test\n\n"
-              f"Author identifier: `{os.environ['IRIS_AUTHORITY']}`\n\n"
-              f"Downloaded **{len(records)} records** without credentials.\n\n"
-              f"Title column present: **{title_present}**. "
-              f"Publication date column present: **{year_present}**.\n\n"
-              "The request uses `rpp=20`; completeness is not established. "
-              "CSV availability does not prove BibTeX availability or "
-              "permission to republish metadata. No site content was changed.\n"
-          )
-          print(summary)
-          Path("exports/report.md").write_text(summary, encoding="utf-8")
-          with Path(os.environ["GITHUB_STEP_SUMMARY"]).open(
-              "a", encoding="utf-8"
-          ) as output:
-              output.write(summary)
-          PY
-
-      - name: Attach validated export
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+            --data-urlencode 'rpp=500' \
+            --data-urlencode 'etal=-1' \
+            --output exports/ciraci.html
+          grep -q '/handle/11587/' exports/ciraci.html
+      - name: Attach public metadata
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: iris-export-${{ inputs.authority }}
+          name: ciraci-iris-catalogue
           path: exports/
           if-no-files-found: error
-          retention-days: 7
-
-      - name: Report failure
-        if: failure()
-        shell: bash
-        run: |
-          printf '%s\n' \
-            '## IRIS export test failed' \
-            '' \
-            'See the failed step for the network, HTTP, CSV validation or artifact error. No site content was changed.' \
-            >> "$GITHUB_STEP_SUMMARY"
+          retention-days: 1
