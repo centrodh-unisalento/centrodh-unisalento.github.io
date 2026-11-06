@@ -115,7 +115,9 @@ section { scroll-margin-top: 2rem; }
 .post-content h2, .post-content h3 { margin-top: 2rem; }
 .post-content pre { overflow-x: auto; }
 .leadership-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.person-card { padding: 2rem; border: 1px solid $line; border-top: 3px solid $yellow; border-radius: 4px; background: #fff; }
+.person-card, .loading-card { padding: 2rem; border: 1px solid $line; border-top: 3px solid $yellow; border-radius: 4px; background: #fff; }
+.loading-card h2 { font-size: 1.5rem; }
+.loading-card ul { margin: 0; padding-left: 1.25rem; }
 .person-card .eyebrow { margin-bottom: 1.5rem; }
 .person-card h3 { margin-bottom: 1rem; }
 .person-card h3 a { display: flex; justify-content: space-between; gap: 1rem; text-decoration: none; }
@@ -150,7 +152,7 @@ section { scroll-margin-top: 2rem; }
   .wrapper { width: calc(100% - 64px); }
   .main-nav { gap: 1.5rem; }
   .intro-section, .feature-section { gap: 3rem; }
-  .person-card { padding: 1.5rem; }
+  .person-card, .loading-card { padding: 1.5rem; }
 }
 @media (max-width: 760px) {
   .header-inner { gap: 1.5rem; }

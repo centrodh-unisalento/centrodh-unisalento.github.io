@@ -39,6 +39,9 @@ degli appuntamenti, includendo titolo, data, sede e informazioni di partecipazio
 `persone.html` presenta la direzione e i sei consiglieri in schede su due colonne,
 con una preview incorniciata delle pubblicazioni e il collegamento
 a IRIS sotto ogni nome. Su schermi piccoli le schede passano a una colonna.
+Sotto il direttivo compare una scheda unica «Gruppo Loading», con il responsabile
+Corrado Claverini, i sei componenti e i rispettivi ambiti di ricerca.
+I contenuti della scheda si modificano in `persone.html`.
 La descrizione delle linee di ricerca è affiancata dai collegamenti ad AVR Lab, DATA Lab,
 Ethics in the Wild e Fondazione per la sostenibilità digitale; su mobile i
 collegamenti seguono la descrizione. Testi e URL si modificano in `persone.html`.
