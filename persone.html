@@ -12,8 +12,8 @@ redirect_from:
   <div class="people-intro">
     <div>
       <p>Le principali linee di ricerca del Direttivo del Centro DH:</p>
-      <p class="publications-note"> Logica e ragionamento con i dati nelle scienze e nell'AI;
-      etica e filosofia dell'intelligenza artificiale; sostenibilità digitale;
+      <p class="publications-note"> Logica e ragionamento con i dati;
+      etica e filosofia dell'informazione; intelligenza artificiale; sostenibilità digitale;
         realtà aumentata e virtuale per il patrimonio culturale; arti performative e cinematografiche e mondo digitale.
       </p>
     </div>
@@ -55,7 +55,8 @@ redirect_from:
     {% assign council = site.data.direttivo | where: "group", "consiglio" %}
     {% for person in council %}
     <li>
-      <h3 class="council-name">{% if person.profile %}<a class="person-profile" href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a>{% else %}<span class="person-name">{{ person.name | escape }}</span>{% endif %}</h3>
+      <h3 class="council-name">{% if person.profile %}
+        <a class="person-profile" href="{{ person.profile | escape }}">{{ person.name | escape }} <span aria-hidden="true">↗</span></a>{% else %}<span class="person-name">{{ person.name | escape }}</span>{% endif %}</h3>
       {% include pubblicazioni-iris.html person=person %}
     </li>
     {% endfor %}
